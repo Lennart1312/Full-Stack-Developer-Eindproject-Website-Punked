@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Step 2</title>
+  <link rel="stylesheet" href="Sign%20Up%20Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+<!-- 🔻 Custom Image (logo/banner/art) -->
+<div class="auth-image">
+  <img src="../Assets/punked22.png" alt="Band Merch Logo" />
+</div>
+
+<div class="auth-container">
+  <h1>Create your account</h1>
+  <form id="register-form">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Choose a username" required />
+
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <div id="password-mask" class="password-mask"></div>
+      <img src="../Assets/unsee.png" alt="Show Password" class="password-toggle" />
+    </div>
+
+    <label for="confirm-password">Confirm Password</label>
+    <div class="password-wrapper">
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Repeat password" required />
+      <div id="confirm-password-mask" class="password-mask"></div>
+      <img src="../Assets/unsee.png" alt="Show Password" class="password-toggle" />
+    </div>
+
+
+
+    <div class="terms-checkbox">
+      <input type="checkbox" id="agree" required />
+      <label for="agree">I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></label>
+    </div>
+
+    <button type="submit">Register</button>
+
+  </form>
+  <p class="auth-link"><a href="Sign%20Up.html">Back to previous step</a></p>
+</div>
+
+
+<script src="signup.js" defer></script>
+
+</body>
+</html>

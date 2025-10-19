@@ -1,0 +1,286 @@
+/* Use the same base styles */
+body.profile-body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Header + Footer already covered in global CSS */
+
+/* Container for profile */
+.profile-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+.profile-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #d10000;
+    text-align: center;
+}
+
+/* Tab buttons */
+.profile-sections {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #111;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #d10000;
+}
+
+/* Content panels */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content h2 {
+    color: #d10000;
+    margin-bottom: 1rem;
+}
+
+.tab-content p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+#create-btn,
+.create-btn {
+    background-color: #d10000;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+    background-color: #a70000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Profile icon and dropdown in nav bar */
+.profile-icon-container {
+    position: relative;
+    margin-left: 1rem;
+}
+
+/* Dropdown menu */
+.profile-dropdown {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 9999;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.dropdown-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.dropdown-username {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #111;
+}
+
+.profile-dropdown ul {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+.profile-dropdown ul li {
+    padding: 0.5rem 1rem;
+}
+
+.profile-dropdown ul li a {
+    color: #111;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.profile-dropdown ul li a:hover {
+    color: #d10000;
+}
+
+/* Hide dropdown initially */
+.hidden {
+    display: none;
+}
+
+/* Profile Icon Container */
+.profile-icon-container {
+    position: relative;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: box-shadow 0.2s ease;
+}
+
+.profile-icon:hover {
+    box-shadow: 0 0 0 3px #d10000;
+}
+
+/* Stylized Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    width: 230px;
+    z-index: 9999;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+    font-family: 'Orbitron', sans-serif;
+    border: 2px solid #d10000;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header of the dropdown */
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #fceaea;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #d10000;
+    margin-right: 0.75rem;
+}
+
+.dropdown-username {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #111;
+    line-height: 1.2;
+}
+
+/* Dropdown Items */
+.profile-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-dropdown ul li {
+    border-top: 1px solid #f4f4f4;
+}
+
+.profile-dropdown ul li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    color: #111;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.profile-dropdown ul li a:hover {
+    background-color: #fceaea;
+    color: #d10000;
+}
+
+.avatar-box {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #d10000;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+}
+
+.user-details {
+    margin-top: 1.5rem;
+}
+
+.name-with-country {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.75rem;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}

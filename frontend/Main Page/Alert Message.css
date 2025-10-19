@@ -1,0 +1,102 @@
+/* popup.css */
+.login-popup-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.login-popup {
+    position: relative; /* add this */
+    background: #fff;
+    color: #000;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+
+.login-popup h2 {
+    color: #d10000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.login-popup p {
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.popup-buttons button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    background: #d10000;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.popup-buttons button:hover {
+    background: #ff1a1a;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d10000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.alert-close-btn:hover {
+    color: #ff1a1a;
+}
+
+/* Optional: make login popup background a bit different */
+#login-required-popup .login-popup {
+    background: #fff0f0;
+    color: #900000;
+    box-shadow: 0 0 20px rgba(217, 0, 0, 0.4);
+    text-align: center;
+}
+
+#login-required-popup h2 {
+    color: #d10000;
+    margin-bottom: 1rem;
+}
+
+#login-required-popup .alert-popup-box {
+    background: #fff0f0;
+    color: #900000;
+    box-shadow: 0 0 20px rgba(217, 0, 0, 0.4);
+    text-align: center;
+}
+

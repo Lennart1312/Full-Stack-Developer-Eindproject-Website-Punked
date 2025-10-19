@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Sell | BandMerch</title>
+    <link rel="stylesheet" href="Profile%20Style.css" />
+    <link rel="stylesheet" href="Main%20Page%20Style.css" />
+    <link rel="stylesheet" href="PTC%20Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-inner">
+        <!-- Logo -->
+        <a href="Main%20Page%20Text.html" class="logo">
+            <img src="../Assets/punked22.png" alt="BandMerch logo" class="logo-img">
+        </a>
+
+        <!-- Search bar -->
+        <form class="search-bar" action="#" role="search">
+            <input type="search" class="search-input" name="q" placeholder="Search band merch…" aria-label="Search">
+        </form>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="Main%20Page%20Text.html">Home</a>
+            <a href="Shop.html">Shop</a>
+            <a href="Sell.html">Sell</a>
+            <a href="#">Login</a>
+            <a href="Sign%20Up.html">Signup</a>
+        </nav>
+
+        <!-- Shopping Cart Icon -->
+        <div class="cart-icon-container">
+            <img src="../Assets/Cart.png" alt="Cart" class="cart-icon" onclick="openCart()" />
+            <span id="cart-count" class="cart-count">0</span>
+        </div>
+
+        <!-- Profile Icon and Dropdown -->
+        <div class="profile-icon-container" id="profile-menu-container">
+            <img src="../Assets/StandardIcon.png" alt="Profile" class="profile-icon" id="profile-icon">
+
+            <!-- Dropdown -->
+            <div class="profile-dropdown hidden" id="profile-dropdown">
+                <div class="profile-dropdown-header">
+                    <img src="../Assets/StandardIcon.png" class="dropdown-avatar" alt="Avatar" />
+                    <div class="dropdown-username">@yourname</div>
+                </div>
+                <ul>
+                    <li><a href="Account%20Settings.html">Account Settings</a></li>
+                    <li><a href="Profile.html#history">Order History</a></li>
+                    <li><a href="Profile.html#listings">My Listings</a></li>
+                    <li><a href="Profile.html#favorites">Favorites</a></li>
+                    <li><a href="Sell.html">Sell Merch</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- Mini Cart Popup -->
+<div id="cart-popup" class="cart-popup hidden">
+    <h3>Your Cart</h3>
+    <ul id="cart-items-list"></ul>
+    <p id="cart-total">Total: €0.00</p>
+    <div class="cart-buttons">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="saveCartBackup()">Save</button>
+        <button onclick="loadSavedCart()">Load</button>
+    </div>
+</div>
+<!-- Cart JS -->
+<script src="cart.js" defer></script>
+
+
+<!-- Genre Navigation Bar -->
+<nav class="genre-nav">
+    <div class="container">
+        <ul class="genre-list">
+            <li class="genre-item">
+                <a href="#">Rock</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Metal</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Punk</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Indie</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Hip-Hop</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Electronic</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Jazz</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="genre-item">
+                <a href="#">Pop</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">Vinyl</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Tour Specials</a></li>
+                        <li><a href="#">Special Items</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="disclaimer-page" style="padding: 2rem; max-width: 1000px; margin: 0 auto;">
+    <h1 style="margin-bottom: 2.5rem;">Disclaimer, Privacy & Terms</h1>
+
+    <section style="margin-bottom: 2rem;">
+        <h2>Privacy Policy</h2>
+        <p>
+            We value your privacy. Any personal information you provide while signing up, browsing, or selling on Punked is treated with strict confidentiality. We do not sell or share your data with third-party advertisers. Cookies are used only to enhance your browsing and selling experience.
+        </p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+        <h2>Terms of Use</h2>
+        <p>
+            Punked is a platform for fans to buy and sell merchandise related to their favorite bands and artists. By using this site, you agree to only sell legally owned items. Counterfeit or infringing goods are strictly prohibited and may result in account suspension or legal action. Users are responsible for setting their own prices, handling shipping, and communicating with buyers honestly.
+        </p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+        <h2>Seller Responsibility</h2>
+        <p>
+            You are responsible for the authenticity and condition of the merchandise you list. We reserve the right to remove any listings that violate our guidelines or intellectual property laws.
+        </p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+        <h2>Contact</h2>
+        <p>
+            For questions, complaints, or feedback, please contact us at:
+            <a href="mailto:support@bandmerch.com">support@punked.net</a><br />
+            or use the contact form available on your profile page.
+        </p>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container flex justify-between">
+        <p>&copy; 2025 BandMerch. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.profile-tabs li');
+    const sections = document.querySelectorAll('.tab-section');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Load avatar
+        const savedAvatar = localStorage.getItem('userAvatar');
+        if (savedAvatar) {
+            document.querySelectorAll('.avatar, .dropdown-avatar, .profile-icon').forEach(el => {
+                el.src = savedAvatar;
+            });
+        }
+
+        // Load username
+        const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+        if (profileData.username) {
+            document.querySelectorAll('.username, .dropdown-username').forEach(el => {
+                el.textContent = '' + profileData.username;
+            });
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Load avatar saved under 'profileImage'
+        const savedAvatar = localStorage.getItem('profileImage');
+        if (savedAvatar) {
+            document.querySelectorAll('.avatar, .dropdown-avatar, .profile-icon').forEach(el => {
+                el.src = savedAvatar;
+            });
+        }
+
+        // Load username from profileData
+        const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+        if (profileData.username) {
+            document.querySelectorAll('.username, .dropdown-username').forEach(el => {
+                el.textContent = profileData.username;
+            });
+        }
+    });
+</script>
+
+<!-- Link JavaScript -->
+<script src="nosearch.js" defer></script>
+<script src="search.js" defer></script>
+<!-- Link the JavaScript file -->
+<script src="profile-dropdown.js" defer></script>
+<script src="login-state.js" defer></script>
+
+</body>
+</html>

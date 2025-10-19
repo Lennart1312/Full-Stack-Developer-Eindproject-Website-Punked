@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #f0f0f0;
+    color: #111;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem; /* same as dark theme */
+    color: #d10000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-box {
+    margin-bottom: 2rem;
+}
+
+.section-box h2 {
+    font-size: 1.25rem; /* same as dark theme */
+    color: #d10000;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkout-form label,
+.payment-options label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.95rem; /* same */
+    font-weight: 600; /* bold for visibility */
+    color: #111;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form textarea,
+.bank-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #111;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    font-family: 'Orbitron', sans-serif; /* 👈 Add this line */
+}
+
+
+.bank-select {
+    margin: 0.5rem 0 1rem;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 1rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.disclaimer a {
+    color: #d10000;
+    text-decoration: underline;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #d10000;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.pay-button:hover {
+    background-color: #a70000;
+}

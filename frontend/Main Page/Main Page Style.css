@@ -1,0 +1,819 @@
+/* Base Reset & Fonts */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Header */
+/* ───────── Slim black header with logo · search · nav ───────── */
+.header {
+    background-color: #000;
+    height: 60px;                     /* small but still usable */
+    display: flex;                    /* make header itself flex */
+    align-items: center;
+    border-bottom: none;
+    color: #fff;
+    /* NEW for sticky behavior */
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+/* keep container max‑width rules you already have */
+.header-inner {
+    display: flex;                    /* 3 columns: logo | search | nav */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;                  /* horizontal breathing room */
+}
+
+/* ───────── Logo placement & size ───────── */
+.logo {                      /* the <a> wrapper */
+    display: flex;
+    align-items: center;     /* vertical centring inside 60‑px bar */
+}
+
+.logo-img {                  /* the <img> itself */
+    height: 40px;            /* tweak this to any value ≤ header height */
+    width: auto;             /* keep aspect ratio */
+    max-width: 180px;        /* optional cap – change or remove */
+    display: block;          /* removes tiny inline gap */
+}
+
+/* ───────── Shopping cart placement & size ───────── */
+/* ───────── Header Layout ───────── */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ───────── Shopping Cart Placement ───────── */
+.cart-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Adjust this for spacing on right */
+    height: 100%; /* Match header height */
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ───────── Shopping Cart Icon ───────── */
+.cart-icon {
+    width: 26px;
+    height: auto;
+    cursor: pointer;
+    content: url('../Assets/Cart.png'); /* Default icon image */
+    transition: 0.2s ease-in-out;
+}
+
+.cart-icon-container:hover .cart-icon {
+    content: url('../Assets/Red Cart.png'); /* Image shown on hover */
+}
+
+/* ───────── Cart Item Count Bubble ───────── */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+
+/* — Search bar — */
+.search-bar {
+    flex: 1;                          /* take remaining middle space */
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 620px;
+    height: 26px;
+    padding: 0 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* — Navigation — */
+.nav {
+    display: flex;
+    gap: 2rem;                        /* space between links */
+}
+
+.nav a {
+    font-size: 0.95rem;
+    line-height: 40px;                /* vertically centers text */
+    color: #fff;
+    text-decoration: none !important;
+}
+
+.nav a:hover {
+    color: #d10000;
+}
+
+
+
+/* Genre Navigation Bar */
+.genre-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    height: 36px;                     /* Set fixed height for slimmer bar */
+    /* NEW for sticky behavior */
+    position: sticky;
+    top: 60px; /* height of your header */
+    z-index: 1000;
+}
+
+.genre-nav > .container {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+
+    /* make the container itself flex so <ul> is centred */
+    display: flex;
+    align-items: center;
+}
+
+.genre-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0rem 0.1rem;                  /* Removed vertical padding, only horizontal */
+    margin: 0;
+    height: 100%;                     /* Fills the .genre-nav height */
+    align-items: center;             /* Vertically centers items */
+}
+
+.genre-list li a {
+    color: #333;
+    font-size: 0.80rem;              /* Slightly smaller for tighter fit */
+    text-decoration: none;
+    font-weight: lighter;
+    line-height: 1;                  /* Normalized for vertical centering */
+}
+
+
+.genre-list li a:hover {
+    color: #d10000;
+}
+
+/* Hero Section with background image */
+.hero-vinted {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('../Assets/IMPRESSIONS_VG_20190815-35.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-cta-card {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 350px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.hero-cta-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.cta-button {
+    background-color: #d10000;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.cta-button:hover {
+    background-color: #a70000;
+}
+
+.how-link {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #d10000;
+    text-decoration: underline;
+}
+
+/* Promo Section */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Common promo card styles */
+.promo-card {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.promo-card .promo-icon {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 0.25rem;
+    z-index: 1;
+}
+
+/* Text inside the card */
+.promo-card p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 0;
+    transform: translateY(5px); /* Move it up/down */
+    text-shadow: 0 0 6px #d10000, 0 0 10px #d10000;
+    z-index: 2;
+}
+
+
+.promo-card:hover {
+    box-shadow: 0 0 15px 4px rgba(255, 0, 0, 0.6); /* red glow */
+    transform: scale(1.03);
+}
+
+/* Individual backgrounds */
+.promo-card.one {
+    background-image: url("../Assets/Promo.jpg"); /* Replace with your file */
+}
+
+.promo-card.two {
+    background-image: url("../Assets/Promo.jpg"); /* Replace with your file */
+}
+
+.promo-card.three {
+    background-image: url("../Assets/Promo.jpg"); /* Replace with your file */
+}
+
+
+/* Categories Section */
+.categories h3,
+.featured h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #d10000;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #fceaea;
+}
+
+/* Featured Products */
+.product-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.product-card h4 {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-top: 1px solid #ccc;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    margin-left: 1rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #d10000;
+}
+
+/* Genre Dropdown */
+.genre-item {
+    position: relative;
+}
+
+.genre-item .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    min-width: 220px;
+}
+
+.genre-item:hover .dropdown {
+    display: block;
+}
+
+.genre-item .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.genre-item .dropdown ul li {
+    margin-bottom: 0.5rem;
+}
+
+.genre-item .dropdown ul li a {
+    color: #111;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+.genre-item .dropdown ul li a:hover {
+    color: #d10000;
+    text-decoration: underline;
+}
+
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Force 5 items per row */
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-left: -2px; /* shift left – adjust as needed */
+}
+
+.product-card.empty {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    color: #aaa;
+}
+
+.image-placeholder {
+    background-color: #eee;
+    height: 230px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    position: relative; /* 👈 REQUIRED so .condition-dot stays inside */
+}
+
+.image2-placeholder {
+    background-color: #eee;
+    height: 320px; /* 🔧 Increase this for taller images */
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    position: relative; /* 👈 REQUIRED so .condition-dot stays inside */
+}
+
+/* Hide condition-dot by default */
+.condition-dot {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Show condition-dot when hovering over image box */
+.image2-placeholder:hover .condition-dot,
+.image-placeholder:hover .condition-dot {
+    opacity: 1;
+}
+
+
+.featured {
+    margin-bottom: 2.2rem; /* Adjust bottom gap value to your liking */
+}
+
+/* ───────── Cart Popup ───────── */
+.cart-popup {
+    position: fixed; /* ✅ fixed instead of absolute */
+    top: 80px;
+    right: 30px;
+    width: 300px;
+    background-color: #111;
+    border: 1px solid #444;
+    padding: 1rem;
+    color: white;
+    border-radius: 10px;
+    z-index: 9999; /* Raised to ensure it's above everything else */
+    box-shadow: 0 0 10px red;
+}
+
+.cart-popup h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #ff4444;
+}
+
+.cart-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.cart-popup li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+
+.cart-popup button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif; /* ✅ Add this line */
+    font-size: 0.85rem; /* Optional: match other button sizes */
+    font-weight: bold;  /* Optional: same styling as CTA buttons */
+}
+
+
+.cart-popup button:hover {
+    background-color: #cc0000;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Add to cart-button class */
+.add-to-cart-btn {
+    background-color: #d10000;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a70000;
+}
+
+.genre-filter {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    padding-left: 1.5rem; /* tweak this value as needed */
+}
+
+.filter-btn {
+    background-color: #111;
+    color: white;
+    border: 1px solid #444;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #d10000;
+}
+
+.filter-btn.active {
+    background-color: #d10000;
+    border-color: #d10000;
+}
+
+/* Genre label on card */
+.genre-tag {
+    display: inline-block;
+    background-color: #d10000;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Condition circle inside image box */
+.condition-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    border: 2px solid #fff;
+}
+
+/* Colors */
+.condition-dot.damaged {
+    background-color: #d10000;
+}
+
+.condition-dot.slightly {
+    background-color: #ffa500;
+}
+
+.condition-dot.good {
+    background-color: #32cd32;
+}
+
+/* Reduce space inside product cards */
+.product-card h4 {
+    margin: 0.2rem 0 0.2rem 0; /* Less space around the item name */
+    font-size: 1rem;
+}
+
+.product-card p {
+    margin: 0.2rem 0 0.5rem 0; /* Less gap above button */
+    font-size: 0.9rem;
+}
+
+.genre-tag {
+    margin-bottom: 0.25rem; /* Reduced gap under genre */
+
+}
+
+.add-to-cart-btn {
+    margin-top: 0.3rem; /* Slightly tighter spacing above button */
+}
+
+/* Style for all styled dropdowns and inputs */
+.filters-bar.styled-filters .styled {
+    font-family: 'Orbitron', sans-serif;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Style for the Clear Filters button */
+.clear-filters-btn {
+    font-family: 'Orbitron', sans-serif;
+    padding: 0.6rem 1.2rem;
+    background-color: #d10000;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.clear-filters-btn:hover {
+    background-color: #a80000;
+}
+
+/* Styled custom Price dropdown to match select.styled appearance */
+.filter-dropdown.styled-price {
+    position: relative;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 0.5rem;
+}
+
+.filter-toggle.styled {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+    background-color: white;
+    color: black;
+    border: 2px solid #ccc;
+    border-radius: 2rem;
+    cursor: pointer;
+    appearance: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter-toggle.styled:hover {
+    border-color: #999;
+}
+
+.filter-dropdown.show .filter-toggle.styled {
+    background-color: #e0f4f4;
+    border-color: #89c2d9;
+}
+
+.filter-content.price-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.75rem;
+    z-index: 5;
+    top: 120%;
+    left: 0;
+    white-space: nowrap;
+    min-width: 200px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.filter-dropdown.show .filter-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.price-input {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.price-input label {
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.price-input input {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    width: 90px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.cart-buttons {
+    display: flex;
+    gap: 8px; /* Increase for more spacing */
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* Ensure login popup never affects page layout */
+.login-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* always above everything else */
+}
+
+.login-popup {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    text-align: center;
+    width: 300px;
+}
+
+.login-popup input {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0 1rem;
+    padding: 0.5rem;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-buttons button {
+    flex: 1;
+    margin: 0 0.25rem;
+}
+
+/* Prevent accidental page scroll when modal is active */
+body.modal-open {
+    overflow: hidden;
+}

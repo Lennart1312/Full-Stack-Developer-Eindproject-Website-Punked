@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Results Found - BandMerch Shop</title>
+  <link rel="stylesheet" href="Profile%20Style.css" />
+  <link rel="stylesheet" href="Main Page Style.css" />
+  <link rel="stylesheet" href="Login%20Window%20Style.css" />
+  <link rel="stylesheet" href="Shop%20Style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .footer {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="Main%20Page%20Text.html" class="logo">
+      <img src="../Assets/punked22.png" alt="BandMerch logo" class="logo-img" />
+    </a>
+
+    <!-- Search bar -->
+    <form class="search-bar" action="#" role="search">
+      <input type="search" class="search-input" name="q" placeholder="Search band merch…" aria-label="Search" />
+    </form>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="Main%20Page%20Text.html">Home</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Sell.html">Sell</a>
+      <a href="#">Login</a>
+      <a href="Sign%20Up.html">Signup</a>
+    </nav>
+
+    <!-- Shopping Cart Icon -->
+    <div class="cart-icon-container">
+      <img src="../Assets/Cart.png" alt="Cart" class="cart-icon" onclick="openCart()" />
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+
+    <!-- Profile Icon and Dropdown -->
+    <div class="profile-icon-container" id="profile-menu-container">
+      <img src="../Assets/StandardIcon.png" alt="Profile" class="profile-icon" id="profile-icon">
+
+      <!-- Dropdown -->
+      <div class="profile-dropdown hidden" id="profile-dropdown">
+        <div class="profile-dropdown-header">
+          <img src="../Assets/StandardIcon.png" class="dropdown-avatar" alt="Avatar" />
+          <div class="dropdown-username">@yourname</div>
+        </div>
+        <ul>
+          <li><a href="Account%20Settings.html">Account Settings</a></li>
+          <li><a href="Profile.html#history">Order History</a></li>
+          <li><a href="Profile.html#listings">My Listings</a></li>
+          <li><a href="Profile.html#favorites">Favorites</a></li>
+          <li><a href="Inbox.html">Inbox</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mini Cart Popup -->
+<div id="cart-popup" class="cart-popup hidden">
+  <h3>Your Cart</h3>
+  <ul id="cart-items-list"></ul>
+  <p id="cart-total">Total: €0.00</p>
+  <div class="cart-buttons">
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="saveCartBackup()">Save</button>
+    <button onclick="loadSavedCart()">Load</button>
+  </div>
+</div>
+
+<!-- Genre Navigation Bar -->
+<nav class="genre-nav">
+  <div class="container">
+    <ul class="genre-list">
+      <li class="genre-item">
+        <a href="Shop.html?genre=rock">Rock</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=rock&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=rock&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=rock&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=rock&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=rock&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=rock&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=rock&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=rock&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=rock&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=metal">Metal</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=metal&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=metal&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=metal&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=metal&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=metal&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=metal&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=metal&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=metal&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=metal&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=punk">Punk</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=punk&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=punk&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=punk&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=punk&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=punk&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=punk&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=punk&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=punk&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=punk&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=indie">Indie</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=indie&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=indie&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=indie&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=indie&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=indie&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=indie&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=indie&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=indie&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=indie&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=hiphop">Hip-Hop</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=hiphop&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=hiphop&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=electronic">Electronic</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=electronic&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=electronic&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=electronic&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=electronic&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=electronic&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=electronic&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=electronic&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=electronic&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=electronic&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=jazz">Jazz</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=jazz&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=jazz&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=jazz&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=jazz&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=jazz&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=jazz&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=jazz&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=jazz&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=jazz&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="Shop.html?genre=pop">Pop</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="Shop.html?genre=pop&category=tshirts">T-Shirts</a></li>
+            <li><a href="Shop.html?genre=pop&category=hoodies">Hoodies</a></li>
+            <li><a href="Shop.html?genre=pop&category=pants">Pants</a></li>
+            <li><a href="Shop.html?genre=pop&category=shoes">Shoes</a></li>
+            <li><a href="Shop.html?genre=pop&category=posters">Posters</a></li>
+            <li><a href="Shop.html?genre=pop&category=vinyl">Vinyl</a></li>
+            <li><a href="Shop.html?genre=pop&category=accessories">Accessories</a></li>
+            <li><a href="Shop.html?genre=pop&category=tour-specials">Tour Specials</a></li>
+            <li><a href="Shop.html?genre=pop&category=special-items">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- No Results Content -->
+<main class="container">
+  <h1 style="color: #d10000;">Sorry, no results found.</h1>
+  <p>Try a different keyword or return to the <a href="Main%20Page%20Text.html" style="color:#d10000; text-decoration: underline;">homepage</a>.</p>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container flex justify-between">
+    <p>&copy; 2025 BandMerch. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="cart.js" defer></script>
+<script src="nosearch.js" defer></script>
+<script src="search.js" defer></script>
+<script src="profile-dropdown.js" defer></script>
+<script src="signup.js" defer></script>
+<script src="login-state.js" defer></script>
+
+</body>
+</html>

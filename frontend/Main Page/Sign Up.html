@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Step 1</title>
+  <link rel="stylesheet" href="Sign%20Up%20Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+
+<!-- 🔻 Custom Image (logo/banner/art) -->
+<div class="auth-image">
+  <img src="../Assets/punked22.png" alt="Band Merch Logo" />
+</div>
+
+<div class="auth-container">
+  <h1>Sign up to start exploring</h1>
+  <form id="email-form">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="name@example.com" required />
+    <button type="submit">Next</button>
+  </form>
+  <p class="auth-link">Already have an account? <a href="Main%20Page%20Text.html">Log in here</a>.</p>
+</div>
+
+<script>
+  document.getElementById('email-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    window.location.href = `Sign Up2.html?email=${encodeURIComponent(email)}`;
+  });
+</script>
+</body>
+</html>

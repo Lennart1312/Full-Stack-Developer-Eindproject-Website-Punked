@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout & Payment</title>
+    <link rel="stylesheet" href="Pay%20Style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="checkout-container">
+    <h1>Checkout</h1>
+
+    <form class="checkout-form">
+        <!-- Order Details -->
+        <section class="section-box">
+            <h2>Order Details</h2>
+
+            <label>
+                Full Name:
+                <input type="text" name="fullname" required>
+            </label>
+
+            <label>
+                Delivery Address:
+                <textarea name="address" rows="3" required></textarea>
+            </label>
+
+            <label>
+                Phone Number (optional):
+                <input type="tel" name="phone">
+            </label>
+        </section>
+
+        <!-- Payment Method -->
+        <section class="section-box">
+            <h2>Payment Method</h2>
+            <div class="payment-options">
+                <label><input type="radio" name="payment" value="ideal" required> iDEAL</label>
+                <select name="bank" class="bank-select" required>
+                    <option value="" disabled selected hidden>Select your bank</option>
+                    <option value="ing">ING</option>
+                    <option value="rabobank">Rabobank</option>
+                    <option value="abnamro">ABN AMRO</option>
+                    <option value="bunq">bunq</option>
+                </select>
+
+                <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                <label><input type="radio" name="payment" value="googlepay"> Google Pay</label>
+                <label><input type="radio" name="payment" value="card"> Credit/Debit Card</label>
+            </div>
+        </section>
+
+        <!-- Order Summary -->
+        <section class="section-box">
+            <h2>Order Summary</h2>
+            <ul class="order-list">
+                <li class="order-item">
+                    <span>Metallica Tour Shirt</span>
+                    <span>€35.00</span>
+                </li>
+                <li class="order-item">
+                    <span>Iron Maiden Hoodie</span>
+                    <span>€50.00</span>
+                </li>
+            </ul>
+            <div class="total">
+                <strong>Total:</strong> <span>€85.00</span>
+            </div>
+        </section>
+
+        <!-- Disclaimer & Pay -->
+        <section class="section-box">
+            <p class="disclaimer">
+                By clicking on <strong>Pay</strong>, you agree to our <a href="#">Terms of Use</a>, <a href="#">Privacy Policy</a>,
+                and confirm that you are purchasing second-hand merchandise directly from another user.
+            </p>
+            <button class="pay-button" type="submit">Pay</button>
+        </section>
+    </form>
+
+</div>
+
+<script src="payment.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+.how-to-sell {
+    padding: 3rem 2rem;
+    background-color: #f0f0f0;
+    flex: 1; /* Ensure it grows inside the flex column */
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+.cta-container {
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #d10000;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;.how-to-sell {
+    padding: 3rem 2rem;
+    background-color: #f0f0f0;
+    flex: 1; /* Ensure it grows inside the flex column */
+}
+
+    .steps-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+
+    .cta-container {
+        text-align: center;
+    }
+
+    .cta-button {
+        background-color: #d10000;
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background-color: #d10000;
+    }
+
+    .disclaimer-page h1 {
+        margin-bottom: 3rem; /* or whatever spacing you want */
+        color: #d10000;
+    }
+
+    .disclaimer-page h2 {
+        color: #d10000;
+    }
+
+
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d10000;
+}
+
+.disclaimer-page h1 {
+    margin-bottom: 3rem; /* or whatever spacing you want */
+    color: #d10000;
+}
+
+.disclaimer-page h2 {
+    color: #d10000;
+}
+

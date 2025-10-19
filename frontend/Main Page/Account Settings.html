@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Account Settings | Punked</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Settings Style.css" />
+    <link rel="stylesheet" href="Main Page Style.css" />
+    <link rel="stylesheet" href="Profile Style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="Main%20Page%20Text.html" class="logo">
+            <img src="../Assets/punked22.png" alt="BandMerch logo" class="logo-img" />
+        </a>
+
+        <!-- Search -->
+        <form class="search-bar" role="search">
+            <input type="search" class="search-input" name="q" placeholder="Search band merch…" aria-label="Search" />
+        </form>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="Main%20Page%20Text.html">Home</a>
+            <a href="Shop.html">Shop</a>
+            <a href="Sell.html">Sell</a>
+            <a href="#">Login</a>
+            <a href="Sign%20Up.html">Signup</a>
+        </nav>
+
+        <!-- Cart -->
+        <div class="cart-icon-container">
+            <img src="../Assets/Cart.png" alt="Cart" class="cart-icon" onclick="openCart()" />
+            <span id="cart-count" class="cart-count">0</span>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-icon-container" id="profile-menu-container">
+            <img src="../Assets/StandardIcon.png" alt="Profile" class="profile-icon" id="profile-icon" />
+
+            <div class="profile-dropdown hidden" id="profile-dropdown">
+                <div class="profile-dropdown-header">
+                    <img src="../Assets/StandardIcon.png" class="dropdown-avatar" alt="Avatar" />
+                    <div class="dropdown-username">@yourname</div>
+                </div>
+                <ul>
+                    <li><a href="Account%20Settings.html">Account Settings</a></li>
+                    <li><a href="Profile.html#history">Order History</a></li>
+                    <li><a href="Profile.html#listings">My Listings</a></li>
+                    <li><a href="Profile.html#favorites">Favorites</a></li>
+                    <li><a href="Inbox.html">Inbox</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mini Cart -->
+<div id="cart-popup" class="cart-popup hidden">
+    <h3>Your Cart</h3>
+    <ul id="cart-items-list"></ul>
+    <p id="cart-total">Total: €0.00</p>
+    <div class="cart-buttons">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="saveCartBackup()">Save</button>
+        <button onclick="loadSavedCart()">Load</button>
+    </div>
+</div>
+
+
+<!-- Settings Form -->
+<div class="settings-container">
+    <h2>Account Settings</h2>
+    <form class="settings-form" id="settingsForm">
+        <label for="profileImage">Profile Picture</label>
+        <div class="avatar-upload">
+            <img src="../Assets/StandardIcon.png" alt="User Avatar" class="avatar" id="avatarPreview" />
+        </div>
+        <input type="file" id="profileImage" accept="image/*" />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" />
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" />
+
+        <label for="bio">Short Description</label>
+        <textarea id="bio" rows="3"></textarea>
+
+        <label for="country">Country</label>
+        <select id="country">
+            <option value="">Select your country</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Germany">Germany</option>
+            <option value="UK">United Kingdom</option>
+            <option value="USA">USA</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="payment">Payment Info (e.g. IBAN or PayPal)</label>
+        <input type="text" id="payment" />
+
+        <label for="password">New Password</label>
+        <input type="password" id="password" />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" />
+
+        <button type="submit">Save Changes</button>
+
+        <div class="danger-zone">
+            <label>Cancel Account</label>
+            <button type="button" id="cancelAccount">Delete My Account</button>
+        </div>
+    </form>
+</div>
+
+<div id="crop-container" class="hidden">
+    <div class="crop-inner">
+        <h3>Crop Your Image</h3>
+        <img id="crop-image" src="" alt="Crop Preview">
+        <div class="crop-controls">
+            <button id="zoom-in">Zoom In</button>
+            <button id="zoom-out">Zoom Out</button>
+            <button id="crop-confirm">Confirm</button>
+            <button id="crop-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Simple logout button in the dropdown (assumes the logout item exists)
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (profileDropdown) {
+        // Add logout item to the dropdown if it's not already there
+        const logoutItem = document.createElement("li");
+        logoutItem.innerHTML = `<a href="#" id="logoutBtn">Logout</a>`;
+        profileDropdown.querySelector("ul").appendChild(logoutItem);
+
+        // Handle logout logic
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("rememberedUsername");
+            localStorage.removeItem("rememberedPassword");
+            // Optional: Clear session flags or user info
+            window.location.href = "Main Page Text.html";
+        });
+    }
+</script>
+
+<!-- Scripts -->
+<script src="cart.js" defer></script>
+<script src="profile-settings.js" defer></script>..
+<script src="profile-dropdown.js" defer></script>
+<script src="login-state.js" defer></script>
+<script src="nosearch.js" defer></script>
+<script src="search.js" defer></script>
+
+</body>
+</html>

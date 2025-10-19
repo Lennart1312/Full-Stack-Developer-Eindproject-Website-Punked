@@ -1,0 +1,195 @@
+.profile-grid-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: transparent; /* Make sure wrapper background is transparent */
+}
+
+.profile-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Firefox */
+    background: transparent; /* ensure no background */
+    position: relative; /* for stacking context */
+    z-index: 1; /* base layer */
+}
+
+.profile-grid::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari */
+}
+
+.product-card {
+    flex: 0 0 180px;
+    background-color: #fff; /* solid white background overrides anything behind */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1; /* ensure cards appear above grid but below buttons */
+}
+
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.image2-placeholder {
+    width: 100%;
+    height: 220px;               /* taller image */
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image2-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.genre-tag {
+    background-color: #222;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.product-card h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem;
+    flex-grow: 1;               /* pushes price down */
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #444;
+    margin: 0;
+}
+
+.username {
+    margin-bottom: 2.5rem;       /* or more if needed */
+}
+
+/* Arrow buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    user-select: none;
+    z-index: 10;
+}
+
+.scroll-btn-left {
+    left: 0.5rem;
+}
+
+.scroll-btn-right {
+    right: 0.5rem;
+}
+
+/* Responsive tweaks: for smaller screens */
+@media (max-width: 1024px) {
+    .profile-grid {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .product-card {
+        flex: 0 0 30%; /* adjust card width on tablets */
+        margin-bottom: 1rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-card {
+        flex: 0 0 45%; /* adjust card width on small screens */
+        margin-bottom: 1rem;
+        height: auto;
+    }
+}
+
+.profile-content h3 {
+    margin-left: 14px; /* adjust the px value to your desired spacing */
+}
+
+.product-card .remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #ff4c4c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    padding: 0;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.product-card .remove-btn:hover {
+    background: #cc0000;
+}
+
+/* Delete All button on bottom-right of each profile grid wrapper */
+.profile-grid-wrapper {
+    position: relative;
+    padding-bottom: 40px; /* space for button */
+}
+
+.delete-all-btn {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    bottom: 6px;
+    right: 6px;
+    background: #ff4c4c;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 8px 14px;
+    user-select: none;
+    box-shadow: 0 0 6px rgba(255, 76, 76, 0.6);
+    transition: background 0.3s;
+}
+
+.delete-all-btn:hover {
+    background: #cc0000;
+}
+

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile | Punke</title>
+  <link rel="stylesheet" href="Main Page Style.css" />
+  <link rel="stylesheet" href="Profile%20Style.css" />
+  <link rel="stylesheet" href="Profile%20Card%20Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="Main%20Page%20Text.html" class="logo">
+      <img src="../Assets/punked22.png" alt="BandMerch logo" class="logo-img">
+    </a>
+
+    <!-- Search bar -->
+    <form class="search-bar" action="#" role="search">
+      <input type="search" class="search-input" name="q" placeholder="Search band merch…" aria-label="Search">
+    </form>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="Main%20Page%20Text.html">Home</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Sell.html">Sell</a>
+      <a href="#">Login</a>
+      <a href="Sign%20Up.html">Signup</a>
+    </nav>
+
+    <!-- Shopping Cart Icon -->
+    <div class="cart-icon-container">
+      <img src="../Assets/Cart.png" alt="Cart" class="cart-icon" onclick="openCart()" />
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+
+    <!-- Profile Icon and Dropdown -->
+    <div class="profile-icon-container" id="profile-menu-container">
+      <img src="../Assets/StandardIcon.png" alt="Profile" class="profile-icon" id="profile-icon">
+
+      <!-- Dropdown -->
+      <div class="profile-dropdown hidden" id="profile-dropdown">
+        <div class="profile-dropdown-header">
+          <img src="../Assets/StandardIcon.png" class="dropdown-avatar" alt="Avatar" />
+          <div class="dropdown-username">@yourname</div>
+        </div>
+        <ul>
+          <li><a href="Account%20Settings.html">Account Settings</a></li>
+          <li><a href="Profile.html#history">Order History</a></li>
+          <li><a href="Profile.html#listings">My Listings</a></li>
+          <li><a href="Profile.html#favorites">Favorites</a></li>
+          <li><a href="Inbox.html">Inbox</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</header>
+
+<!-- Mini Cart Popup -->
+<div id="cart-popup" class="cart-popup hidden">
+  <h3>Your Cart</h3>
+  <ul id="cart-items-list"></ul>
+  <p id="cart-total">Total: €0.00</p>
+  <div class="cart-buttons">
+    <button onclick="clearCart()">Clear Cart</button>
+  </div>
+</div>
+
+<!-- Cart JS -->
+<script src="cart.js" defer></script>
+
+
+<!-- Genre Navigation Bar -->
+<nav class="genre-nav">
+  <div class="container">
+    <ul class="genre-list">
+      <li class="genre-item">
+        <a href="#">Rock</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Metal</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Punk</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Indie</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Hip-Hop</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Electronic</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Jazz</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="genre-item">
+        <a href="#">Pop</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Hoodies</a></li>
+            <li><a href="#">Pants</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Posters</a></li>
+            <li><a href="#">Vinyl</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Tour Specials</a></li>
+            <li><a href="#">Special Items</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Profile Page Layout -->
+<main class="profile-container container">
+  <!-- Profile Sidebar -->
+  <aside class="profile-sidebar">
+    <div class="avatar-box">
+      <img src="../Assets/StandardIcon.png" alt="User Avatar" class="avatar" />
+      <h2 class="username">@yourname</h2>
+    </div>
+  </aside>
+
+  <!-- Profile Main Content -->
+  <section class="profile-content">
+
+    <div id="listings" class="tab-section active">
+      <h3>My Listings</h3>
+      <div class="profile-grid-wrapper">
+        <button class="scroll-btn scroll-btn-left" aria-label="Scroll Left">&lt;</button>
+        <div class="profile-grid" id="listings-grid">
+          <!-- Cards go here -->
+        </div>
+        <button class="scroll-btn scroll-btn-right" aria-label="Scroll Right">&gt;</button>
+      </div>
+    </div>
+
+    <div id="history" class="tab-section">
+      <h3>Order History</h3>
+      <div class="profile-grid-wrapper">
+        <button class="scroll-btn scroll-btn-left" aria-label="Scroll Left">&lt;</button>
+        <div class="profile-grid" id="history-grid">
+          <!-- Cards go here -->
+        </div>
+        <button class="scroll-btn scroll-btn-right" aria-label="Scroll Right">&gt;</button>
+      </div>
+    </div>
+
+    <div id="favorites" class="tab-section">
+      <h3>Saved Favorites</h3>
+      <div class="profile-grid-wrapper">
+        <button class="scroll-btn scroll-btn-left" aria-label="Scroll Left">&lt;</button>
+        <div class="profile-grid" id="favorites-grid">
+          <!-- Cards go here -->
+        </div>
+        <button class="scroll-btn scroll-btn-right" aria-label="Scroll Right">&gt;</button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- 🔻 Optional: Footer -->
+<footer class="footer">
+  <div class="container flex justify-between">
+    <p>&copy; 2025 BandMerch. All rights reserved.</p>
+    <div>
+      <a href="PTC.html">Privacy</a>
+      <a href="PTC.html">Terms</a>
+      <a href="PTC.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tab switching functionality
+  const tabs = document.querySelectorAll('.profile-tabs li');
+  const sections = document.querySelectorAll('.tab-section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.substring(1); // Get just the id, without #
+    if (hash) {
+      const targetSection = document.getElementById(hash);
+      if (targetSection) {
+        // Deactivate all tabs and sections
+        document.querySelectorAll('.profile-tabs li').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-section').forEach(section => section.classList.remove('active'));
+
+        // Activate the correct section
+        targetSection.classList.add('active');
+
+        // Activate the matching tab
+        const tab = document.querySelector(`.profile-tabs li[data-tab="${hash}"]`);
+        if (tab) tab.classList.add('active');
+
+        // Scroll to it (optional, just in case)
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Load avatar
+    const savedAvatar = localStorage.getItem('userAvatar');
+    if (savedAvatar) {
+      document.querySelectorAll('.avatar, .dropdown-avatar, .profile-icon').forEach(el => {
+        el.src = savedAvatar;
+      });
+    }
+
+    // Load username
+    const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+    if (profileData.username) {
+      document.querySelectorAll('.username, .dropdown-username').forEach(el => {
+        el.textContent = '' + profileData.username;
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Load avatar saved under 'profileImage'
+    const savedAvatar = localStorage.getItem('profileImage');
+    if (savedAvatar) {
+      document.querySelectorAll('.avatar, .dropdown-avatar, .profile-icon').forEach(el => {
+        el.src = savedAvatar;
+      });
+    }
+
+    // Load username from profileData
+    const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+    if (profileData.username) {
+      document.querySelectorAll('.username, .dropdown-username').forEach(el => {
+        el.textContent = profileData.username;
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+
+    const firstName = profileData.firstname || '';
+    const lastName = profileData.lastname || '';
+    const country = profileData.country || '';
+
+    const fullNameWithCountry = `${firstName} ${lastName}`.trim() + (country ? ` [${country}]` : '');
+
+    document.getElementById("name-with-country").textContent = fullNameWithCountry || '—';
+    document.getElementById("bio-value").textContent = profileData.bio || '—';
+  });
+</script>
+
+
+<!-- Link JavaScript -->
+<script src="nosearch.js" defer></script>
+<script src="search.js" defer></script>
+<script src="profile-dropdown.js" defer></script>
+<script src="signup.js" defer></script>
+<script src="login-state.js" defer></script>
+<script src="profile-products.js" defer></script>
+<script src="profile-product-delete.js" defer></script>
+<script src="mock-profile-produts.js" defer></script>
+
+</body>
+</html>

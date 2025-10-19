@@ -1,0 +1,92 @@
+.how-to-sell {
+    padding: 3rem 2rem;
+    background-color: #f0f0f0;
+    flex: 1; /* Ensure it grows inside the flex column */
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.step-box {
+    flex: 1 1 280px;
+    max-width: 320px;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.step-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+}
+
+.step-box h2,
+.step-box p {
+    position: relative;
+    z-index: 1;
+}
+
+.step-1 {
+    background-image: url('../Assets/MotleyShirt.jpg'); /* Replace with your own */
+}
+
+.step-2 {
+    background-image: url('../Assets/Discovered.png'); /* Replace with your own */
+}
+
+.step-3 {
+    background-image: url('../Assets/Payment.jpg'); /* Replace with your own */
+}
+
+.cta-container {
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #d10000;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d10000;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* optional: center vertically */
+}
+
+.disclaimer-page h1,
+.disclaimer-page h2 {
+    color: #d10000;
+}
+

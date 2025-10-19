@@ -1,0 +1,14 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+}
+
+.content {
+    flex-grow: 1; /* take up all leftover space */
+}
+
+/* Optional: prevent footer shrinking */
+footer.footer {
+    flex-shrink: 0;
+}

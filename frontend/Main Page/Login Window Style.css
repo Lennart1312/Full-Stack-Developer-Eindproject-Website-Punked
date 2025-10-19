@@ -1,0 +1,95 @@
+.login-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.login-popup {
+    background: #fff; /* Changed from dark to white */
+    color: #000;       /* Text color to black */
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.login-popup h2 {
+    color: #d10000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.login-popup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #000; /* Make labels black */
+}
+
+.login-popup input[type="email"],
+.login-popup input[type="password"] {
+    width: 93%; /* Shorter width */
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;  /* White background */
+    color: #000;       /* Black text */
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif; /* 👈 Add this line */
+}
+
+.remember-checkbox {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #000;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.popup-buttons button {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    background: #d10000;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.popup-buttons button:hover {
+    background: #ff1a1a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

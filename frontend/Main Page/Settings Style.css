@@ -1,0 +1,92 @@
+.settings-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: 'Orbitron', sans-serif;
+}
+.settings-container h2 {
+    color: #d10000;
+    margin-bottom: 1.5rem;
+}
+.settings-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.settings-form input,
+.settings-form select,
+.settings-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.settings-form button {
+    background-color: #d10000;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+    font-family: 'Orbitron', sans-serif; /* ✅ Add this line */
+}
+.settings-form button:hover {
+    background-color: #a70000;
+}
+.danger-zone {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+.danger-zone button {
+    background: #444;
+    color: white;
+    margin-top: 1rem;
+    font-family: 'Orbitron', sans-serif; /* ✅ Add this line */
+}
+
+/* Apply Orbitron font to all buttons */
+button {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Apply Orbitron font to all inputs, textareas, and selects */
+input,
+textarea,
+select {
+    font-family: 'Orbitron', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.avatar-upload {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-upload .avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #d10000;
+}
+
+.settings-form input[type="password"] {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 2.2rem;       /* adjust to match original height */
+    line-height: 2.5rem;  /* vertically center text */
+    padding: 0 0.5rem;    /* keep some padding */
+    box-sizing: border-box;
+}

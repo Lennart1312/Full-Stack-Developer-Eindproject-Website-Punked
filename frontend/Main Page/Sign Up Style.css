@@ -1,0 +1,144 @@
+body.auth-body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* 🔻 Adjustable top image */
+.auth-image {
+    margin-bottom: 20px;
+}
+.auth-image img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Main container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button {
+    background-color: #d10000;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #a00000;
+}
+
+.auth-link {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.auth-link a {
+    color: #d10000;
+    text-decoration: none;
+}
+
+.password-wrapper input[type="password"] {
+    position: relative;
+    background: white;
+    color: Black; /* hide typed characters */
+    caret-color: black; /* keep caret visible */
+    z-index: 2;
+    width: 100%;
+    padding: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    flex: 1;
+    padding-right: 2.5rem; /* Room for eye icon */
+    background: white;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.password-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1; /* Ensures mask is behind toggle icon */
+    color: black;
+    font-size: 1.5rem; /* Bigger dots */
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    z-index: 2; /* Always above mask/input */
+    user-select: none;
+}
+
+.password-wrapper.visible .password-mask {
+    display: none;
+}

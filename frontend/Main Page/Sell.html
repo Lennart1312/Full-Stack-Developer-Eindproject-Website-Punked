@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Band Merch</title>
+  <link rel="stylesheet" href="Profile%20Style.css" />
+  <link rel="stylesheet" href="Main Page Style.css" />
+  <link rel="stylesheet" href="Login%20Window%20Style.css" />
+  <link rel="stylesheet" href="Alert%20Message.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    /* --- Container & Form Styling --- */
+    .sell-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form label { display:block; margin-top:1rem; font-weight:bold; margin-bottom:0.5rem; }
+    form input, form select, form textarea {
+      width:100%;
+      padding:0.75rem;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-family:inherit;
+      font-size:1rem;
+      box-sizing:border-box;
+    }
+    form textarea { resize: vertical; min-height: 120px; }
+    .form-section { margin-bottom: 1rem; }
+    .image-upload { margin-top: 1rem; }
+    .form-submit { text-align:center; margin-top:2rem; }
+    .form-submit button {
+      background-color: #d10000;
+      color:white;
+      border:none;
+      padding:0.75rem 2rem;
+      font-size:1rem;
+      font-weight:bold;
+      border-radius:8px;
+      cursor:pointer;
+      font-family:'Orbitron', sans-serif;
+    }
+    .form-submit button:hover { background-color:#a70000; }
+
+    /* --- Image Carousel --- */
+    .image-carousel { display:flex; gap:1rem; overflow-x:auto; padding-top:1rem; scroll-snap-type:x mandatory; -webkit-overflow-scrolling: touch; }
+    .image-carousel .image-wrapper { position:relative; flex:0 0 auto; scroll-snap-align:start; }
+    .image-carousel img { height:180px; width:auto; border-radius:8px; object-fit:cover; box-shadow:0 0 5px rgba(0,0,0,0.2); }
+    .remove-btn {
+      position:absolute; top:6px; right:6px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:22px; height:22px; cursor:pointer; font-size:14px; line-height:20px; text-align:center;
+    }
+
+    /* --- Radio/checkbox description styling --- */
+    form input[type="radio"] + span, form input[type="checkbox"] + span {
+      font-weight:400; color:#666; font-size:0.95rem; margin-left:0.3rem; font-style:italic;
+    }
+
+    /* --- Logged Off Overlay Styling --- */
+    #loggedoff-overlay h2 { font-family:'Orbitron', sans-serif; }
+    #loggedoff-overlay button:hover { background-color:#a70000; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="Main%20Page%20Text.html" class="logo">
+      <img src="../Assets/punked22.png" alt="BandMerch logo" class="logo-img">
+    </a>
+    <form class="search-bar" action="#" role="search">
+      <input type="search" class="search-input" name="q" placeholder="Search band merch…" aria-label="Search">
+    </form>
+    <nav class="nav">
+      <a href="Main%20Page%20Text.html">Home</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Sell.html">Sell</a>
+      <a href="#">Login</a>
+      <a href="Sign%20Up.html">Signup</a>
+    </nav>
+    <div class="cart-icon-container">
+      <img src="../Assets/Cart.png" alt="Cart" class="cart-icon" onclick="openCart()" />
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+    <div class="profile-icon-container" id="profile-menu-container">
+      <img src="../Assets/StandardIcon.png" alt="Profile" class="profile-icon" id="profile-icon">
+      <div class="profile-dropdown hidden" id="profile-dropdown">
+        <div class="profile-dropdown-header">
+          <img src="../Assets/StandardIcon.png" class="dropdown-avatar" alt="Avatar" />
+          <div class="dropdown-username">@yourname</div>
+        </div>
+        <ul>
+          <li><a href="Account%20Settings.html">Account Settings</a></li>
+          <li><a href="Profile.html#history">Order History</a></li>
+          <li><a href="Profile.html#listings">My Listings</a></li>
+          <li><a href="Profile.html#favorites">Favorites</a></li>
+          <li><a href="Sell.html">Sell Merch</a></li>
+          <li><a href="Inbox.html">Inbox</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mini Cart Popup -->
+<div id="cart-popup" class="cart-popup hidden">
+  <h3>Your Cart</h3>
+  <ul id="cart-items-list"></ul>
+  <p id="cart-total">Total: €0.00</p>
+  <div class="cart-buttons">
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="saveCartBackup()">Save</button>
+    <button onclick="loadSavedCart()">Load</button>
+  </div>
+</div>
+
+<script src="cart.js" defer></script>
+
+<div class="sell-container">
+  <form id="sell-form">
+
+    <h2>Sell Your Band Merch</h2>
+
+    <!-- Title -->
+    <div class="form-section">
+      <label for="title">Item Title</label>
+      <input type="text" id="title" name="title" placeholder="e.g. Nirvana 1993 Tour Shirt" required />
+    </div>
+
+    <!-- Description -->
+    <div class="form-section">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" placeholder="Describe condition, size, authenticity, etc." maxlength="250" required></textarea>
+    </div>
+
+    <!-- Genre -->
+    <div class="form-section">
+      <label for="genre">Genre</label>
+      <select id="genre" name="genre" required>
+        <option value="">Select Genre</option>
+        <option value="rock">Rock</option>
+        <option value="metal">Metal</option>
+        <option value="punk">Punk</option>
+        <option value="indie">Indie</option>
+        <option value="hiphop">Hip-Hop</option>
+        <option value="electronic">Electronic</option>
+        <option value="jazz">Jazz</option>
+        <option value="pop">Pop</option>
+      </select>
+    </div>
+
+    <!-- Category -->
+    <div class="form-section">
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">Select Category</option>
+        <option value="tshirts">T-Shirt</option>
+        <option value="hoodies">Hoodie</option>
+        <option value="pants">Pants</option>
+        <option value="shoes">Shoes</option>
+        <option value="posters">Poster</option>
+        <option value="vinyl">Vinyl</option>
+        <option value="accessories">Accessory</option>
+        <option value="tour-specials">Tour Special</option>
+        <option value="special-items">Special Item</option>
+      </select>
+    </div>
+
+    <!-- Quality -->
+    <div class="form-section">
+      <label for="condition">Quality</label>
+      <select id="condition" name="condition" required>
+        <option value="">Select Quality</option>
+        <option value="good">Good</option>
+        <option value="slightly">Slightly Damaged</option>
+        <option value="damaged">Damaged</option>
+      </select>
+    </div>
+
+    <!-- Color -->
+    <div class="form-section">
+      <label for="color">Color</label>
+      <select id="color" name="color" required>
+        <option value="">Select Color</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="rainbow">Multicolor</option>
+      </select>
+    </div>
+
+    <!-- Size -->
+    <div class="form-section">
+      <label for="size">Size</label>
+      <select id="size" name="size" required>
+        <option value="">Select Size</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="N/A">N/A</option>
+      </select>
+    </div>
+
+    <!-- Price -->
+    <div class="form-section">
+      <label for="price">Price (€)</label>
+      <input type="number" id="price" name="price" min="0" step="0.01" placeholder="e.g. 25.00" required />
+    </div>
+
+    <!-- Images -->
+    <div class="form-section image-upload">
+      <label for="image-input">Upload up to 3 Images</label>
+      <input type="file" id="image-input" accept="image/*" />
+      <div class="image-carousel" id="image-carousel"></div>
+      <small id="image-limit-warning" style="color:red; display:none;">You can only upload up to 3 images.</small>
+    </div>
+
+    <!-- Buyer Approval -->
+    <div class="form-section">
+      <label>Does this item require buyer approval before purchase?</label>
+      <div style="display:flex; align-items:center; gap:1rem; margin-top:0.5rem;">
+        <label>
+          <input type="radio" name="approval" value="yes" required />
+          <span>Yes — Buyer must message me first for approval</span>
+        </label>
+        <label>
+          <input type="radio" name="approval" value="no" />
+          <span>No — Instant Buy (first come, first served)</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-submit">
+      <button type="submit" disabled>List Item</button>
+    </div>
+  </form>
+</div>
+
+<!-- Login Required Popup -->
+<div id="login-required-popup" class="login-popup-overlay" style="display:none;">
+  <div class="login-popup">
+    <button class="alert-close-btn" onclick="document.getElementById('login-required-popup').style.display='none'" aria-label="Close popup" style="position:absolute;top:10px;right:10px;background:transparent;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+    <h2>Login Required</h2>
+    <p style="text-align:center;">You must be logged in to list an item.</p>
+  </div>
+</div>
+
+<!-- Success Popup -->
+<div id="success-popup" class="login-popup-overlay" style="display:none;">
+  <div class="login-popup">
+    <button class="alert-close-btn" onclick="document.getElementById('success-popup').style.display='none'" style="position:absolute;top:10px;right:10px;background:transparent;border:none;font-size:1.5rem;cursor:pointer;" aria-label="Close popup">&times;</button>
+    <h2>Item Listed Successfully!</h2>
+    <p style="text-align:center;">Redirecting to your profile page</p>
+    <div class="popup-buttons">
+      <button onclick="window.location.href='Profile.html'">Go Now</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container flex justify-between">
+    <p>&copy; 2025 BandMerch. All rights reserved.</p>
+    <div>
+      <a href="PTC.html">Privacy</a>
+      <a href="PTC.html">Terms</a>
+      <a href="PTC.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedAvatar = localStorage.getItem('profileImage') || localStorage.getItem('userAvatar');
+    if (savedAvatar) document.querySelectorAll('.avatar, .dropdown-avatar, .profile-icon').forEach(el=>el.src=savedAvatar);
+
+    const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+    if (profileData.username) document.querySelectorAll('.username, .dropdown-username').forEach(el=>el.textContent=profileData.username);
+  });
+</script>
+
+<!-- JS Links -->
+<script src="nosearch.js" defer></script>
+<script src="search.js" defer></script>
+<script src="profile-dropdown.js" defer></script>
+<script src="signup.js" defer></script>
+<script src="login-state.js" defer></script>
+<script src="sell-backend.js" defer></script>
+<script src="sell-logged-off.js" defer></script>
+<script src="new-product.js" defer></script>
+<script src="cart.js" defer></script>
+
+</body>
+</html>
